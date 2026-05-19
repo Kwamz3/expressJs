@@ -1,0 +1,5 @@
+### Test GET ('/')
+GET http://localhost:3000
+
+### Test GET ('/dashboard')
+GET http://localhost:3000/dashboard
