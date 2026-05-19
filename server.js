@@ -2,8 +2,11 @@ const express = require('express');
 const app = express();
 const PORT = 3000;
 
-// *** Website endpoints ***
+let data = {
+    "name": "James"
+}
 
+// *** Website endpoints ***
 app.get('/', (req, res) => {
     res.send('<h1>homepage</h1>');
 })
@@ -13,7 +16,9 @@ app.get('/dashboard', (req, res) => {
 })
 
 // *** API endpoints ***
-
+app.get('/api/data', (req, res) => {
+    res.send(data);
+})
 
 
 app.listen(PORT, () => {
