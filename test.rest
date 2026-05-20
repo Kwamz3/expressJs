@@ -9,3 +9,14 @@ GET http://localhost:3000/dashboard
 ### Data endpoints
 ### Test GET ('/api/data')
 GET http://localhost:3000/api/data
+
+### Test POST ('/api/data')
+POST http://localhost:3000/api/data
+Content-Type: application/json
+
+{
+    "name": "Jim"
+}
+
+### Test DELETE ('/api/data')
+DELETE http://localhost:3000/api/data
