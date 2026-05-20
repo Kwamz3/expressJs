@@ -15,7 +15,7 @@ POST http://localhost:3000/api/data
 Content-Type: application/json
 
 {
-    "name": "Jim"
+    "name": "Jam"
 }
 
 ### Test DELETE ('/api/data')

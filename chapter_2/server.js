@@ -21,17 +21,22 @@ app.get("/", (req, res) => {
             <p>
                 ${JSON.stringify(data)}
             </p>
+
+            <a href='/dashboard'>dashboard</a>
         </body>
         `);
 });
 
 app.get("/dashboard", (req, res) => {
-  res.send("<h1>dashboard</h1>");
+    res.send(`<body>
+                <h1>Dashboard</h1>
+                <a href='/'>home</a>
+        </body>`);
 });
 
 // *** API endpoints ***
 app.get("/api/data", (req, res) => {
-  res.send(data);
+  res.status(200).send(data);
 });
 
 app.post('/api/data', (req, res) => {
@@ -44,7 +49,13 @@ app.post('/api/data', (req, res) => {
 app.delete('/api/data', (req, res) => {
     data.pop()
     console.log('Deleted successfully')
-    res.sendStatus(200)
+    res.status(200).send(`
+        <body>
+            <script>
+                Deleted successfully
+            </script>
+        </body>
+        `);
 })
 
 app.listen(PORT, () => {
