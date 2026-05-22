@@ -23,4 +23,4 @@ router.delete('/:id', (req, res) => {
     
 })
 
-export default todoRoutes
+export default router
