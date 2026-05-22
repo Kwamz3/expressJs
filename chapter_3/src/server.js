@@ -17,12 +17,12 @@ app.use(express.json());
 
 // serving the html from the public folder
 // telling express to serve all files from the public folder
-app.use(express.static(path.join(__dirname, '../public')))
+app.use(express.static(path.join(__dirname, '../public')));
 
 
 // serving up the frontend from the public directory
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'))
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 })
 
 app.listen(PORT, () => {
