@@ -11,8 +11,9 @@ const __filename = fileURLToPath(import.meta.url)
 // getting the directory name from the file path
 const __dirname = dirname(__filename)
 
+// serving up the frontend from the public directory
 app.get('/', (req, res) => {
-    res.sendFile(path)
+    res.sendFile(path.join(__dirname, 'public', 'index.html'))
 })
 
 app.listen(PORT, () => {
