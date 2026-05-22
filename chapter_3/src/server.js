@@ -1,6 +1,7 @@
 import express from 'express'
 import path, { dirname } from 'path'
 import { fileURLToPath } from 'url'
+import authRoutes from './routes/authRoutes'
 
 const app = express()
 const PORT = process.env.PORT || 3000
@@ -11,7 +12,7 @@ const __filename = fileURLToPath(import.meta.url)
 // getting the directory name from the file path
 const __dirname = dirname(__filename)
 
-// *** Middleware ***
+// *** MIDDLEWARE ***
 // enable the interpretation of json
 app.use(express.json());
 
@@ -24,6 +25,10 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 })
+
+// *** ROUTES ***
+app.use('/auth', authRoutes)
+
 
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:3000`);
