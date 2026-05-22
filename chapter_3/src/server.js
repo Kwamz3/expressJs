@@ -11,6 +11,10 @@ const __filename = fileURLToPath(import.meta.url)
 // getting the directory name from the file path
 const __dirname = dirname(__filename)
 
+// serving the html from the public folder
+// telling express to serve all files from the public folder
+app.use(express.static(path.join(__dirname, '../public')))
+
 // serving up the frontend from the public directory
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'))
